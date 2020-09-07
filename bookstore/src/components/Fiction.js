@@ -12,14 +12,15 @@ export default class Fiction extends Component {
         async getBooks(){
             try{
             const res = await axios.get('http://localhost:8080/book/list');
-            const bookList = res.data[1].title;
+            const bookList = res.data[0].title;
             console.log(bookList)
-            } catch(e) {
-                console.error(e, e.message);
-            }
             this.setState({
                 fictionList: bookList
             })
+            } catch(e) {
+                console.error(e, e.message);
+            }
+            
         }
         componentDidMount() {
             this.getBooks()
