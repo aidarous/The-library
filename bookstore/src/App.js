@@ -1,27 +1,35 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+
+
+
 import './App.css';
-import axios from 'axios';
+import Fiction from './components/Fiction';
 
 function App() {
-  const [books , setBooks] = useState(null);
-  async function grabAllUsers() {
-    try {
-      const res = await axios.get('http://localhost:8080/book/list');
-      console.log(res.data);
-    } catch(e) {
-      console.error(e, e.message);
-    }
-    
-  }
+  
 
-  useEffect(() => {
-    grabAllUsers();
-  })
+  
+  
   return (
+    <Router>
     <div className="App">
-      
+      <nav className="nav-bar">
+        <ul>
+          <li><Link to="/Home">Home </Link></li>
+          <li><Link to="/Fiction">Fiction </Link></li>
+          <li><Link to="/Language">Language </Link></li>
+          <li><Link to="/Programming">Programming </Link></li>
+        </ul>
+      </nav>
+     <Switch>
+       
+       <Route path='/Fiction'>
+         <Fiction />
+       </Route>
+     </Switch>
     </div>
+    </Router>    
   );
 }
 
