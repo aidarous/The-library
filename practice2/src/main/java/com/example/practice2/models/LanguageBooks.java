@@ -20,6 +20,10 @@ public class LanguageBooks {
     @Column
     private String price;
 
+    public LanguageBooks () {
+
+    }
+
     public Long getId() {
         return id;
     }
@@ -52,7 +56,5 @@ public class LanguageBooks {
         this.price = price;
     }
 
-    public LanguageBooks () {
 
-    }
 }

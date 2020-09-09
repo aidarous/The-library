@@ -28,6 +28,16 @@ export default class Fiction extends Component {
     render() {
         return (
             <div>
+                <section>
+                <h1>Books to donate</h1>
+                <form>
+                    <input type="text" id="title"  placeholder=" Book title "/>
+                    <input type="text"  id="author" placeholder=" author  "/>
+                    <input type="text" id="genre" placeholder="genre" />
+                    <input className="btn" type="submit" value="Donate"/>
+                </form>
+            </section>
+                <h1>Our collection</h1>
                 <p>{this.state.fictionList}</p>
             </div>
         )

@@ -14,6 +14,7 @@ function App() {
   return (
     <Router>
     <div className="App">
+      <div>
       <nav className="nav-bar">
         <ul>
           <li><Link to="/Home">Home </Link></li>
@@ -22,9 +23,10 @@ function App() {
           <li><Link to="/Programming">Programming </Link></li>
         </ul>
       </nav>
+      </div>
      <Switch>
        
-       <Route path='/Fiction'>
+       <Route path='/Fiction'><br /><br />
          <Fiction />
        </Route>
      </Switch>
